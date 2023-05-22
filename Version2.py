@@ -37,9 +37,9 @@ class Player(pygame.sprite.Sprite):
         if self.rect.bottom >= 300:
             self.rect.bottom = 300
 
-        if self.move_left:
+        if self.move_left and self.rect.left > 0:
             self.rect.x -= 5
-        elif self.move_right:
+        elif self.move_right and self.rect.right < 800:
             self.rect.x += 5
 
     def animation_state(self):
